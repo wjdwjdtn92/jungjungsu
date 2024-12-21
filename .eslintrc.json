@@ -1,3 +1,73 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "desc",
+          "caseInsensitive": true
+        },
+        "groups": [
+          "type",
+          "builtin",
+          "external",
+          "internal",
+          "index",
+          "sibling",
+          "parent",
+          "object"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "next/**",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "@tanstack/**",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**/components/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**/constants/**",
+            "group": "object",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**/hooks/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**/services/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**/providers/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**/types/**",
+            "group": "type",
+            "position": "before"
+          }
+        ]
+      }
+    ]
+  }
 }
