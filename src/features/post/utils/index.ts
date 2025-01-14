@@ -1,1 +1,1 @@
-export * from './mdx.util';
+export * from './get-post.util';
