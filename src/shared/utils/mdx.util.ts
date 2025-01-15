@@ -1,12 +1,7 @@
+import type { Metadata } from '../types/mdx.type';
+
 import path from 'path';
 import fs from 'fs';
-
-type Metadata = {
-  title: string;
-  publishedAt: string;
-  summary: string;
-  image?: string;
-};
 
 function parseFrontmatter(fileContent: string) {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
